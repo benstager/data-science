@@ -30,8 +30,8 @@ for url in good_urls:
     pr_links = {a['href'] for a in soup('a') if 'press releases' in a.text
                 .lower()} # getting press release link for each good url
                           # a is typically used for urls in html
-    print('house url:', url, 'press link:', pr_links)
-    print()
+    #print('house url:', url, 'press link:', pr_links)
+    # print()
     press_releases[url] = pr_links # creating dictionary
                                    # key: rep url, value: corresponding pr link
 
@@ -43,14 +43,14 @@ def paragraph_mentions(text, keyword):
     paragraphs = [p.get_text() for p in soup('p')]
 
     return any(keyword.lower() in paragraph.lower() 
-               for paragraph in paragraphs)
+               for paragraph in paragraphs) # returns true if keyword appears
 
 # testing
 for url, prls in press_releases.items():
     for prl in prls:
-        suburl = f"{url}/{prl}"
+        suburl = f"{url}/{prl}" # url -> press release url
         html = requests.get(suburl).text
 
-        if paragraph_mentions(html, 'America'):
+        if paragraph_mentions(html, 'America'): # testing keyword America
             print(f"{url}")
-
+            break
