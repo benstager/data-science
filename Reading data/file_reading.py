@@ -11,4 +11,3 @@ with open('tester.txt') as f:
         if 'about' in line:
             starts_with_T += 1
 
-print(starts_with_T)

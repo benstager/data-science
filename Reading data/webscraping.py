@@ -12,3 +12,4 @@ first_par_words = soup.p.text.split()
 
 all_pars = soup('p')
 print(len(all_pars))
+
