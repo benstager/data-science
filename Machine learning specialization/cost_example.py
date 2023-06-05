@@ -9,8 +9,8 @@ def cost(x, y, beta0, beta1):
 
     RSS = 0
     for i in range(len(x)):
-        RSS += ((beta0 + beta1*x[i]) - y[i])**2
+        RSS += ((beta0 + beta1*x[i]) - y[i])**2 # finding residual sum of squares
    
     return 1/len(x) * RSS
 
-print(cost(x_train, y_train, 200, 5))
+print(cost(x_train, y_train, 200, 5)) 
