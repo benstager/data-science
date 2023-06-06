@@ -2,7 +2,7 @@ import math
 import numpy as np
 import copy
 from logistic_intro import sigmoid
-
+from sklearn.linear_model import LogisticRegression
 # We want to write a from scratch approach of gradient descent
 
 # 1. Load data
@@ -41,4 +41,12 @@ b_tmp  = 0.
 alpha = 0.1
 iters = 10000
 
-print(descent(X, y, w_tmp, b_tmp, alpha, iters))
+w, b = descent(X, y, w_tmp, b_tmp, alpha, iters)
+print(np.matmul(X, w) + b)
+
+# Let's compare using scikit
+lr_model = LogisticRegression()
+lr_model.fit(X, y)
+print(lr_model.predict(X))
+
+print("Accuracy on training set:", lr_model.score(X, y))
