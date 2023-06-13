@@ -49,4 +49,4 @@ lr_model = LogisticRegression()
 lr_model.fit(X, y)
 print(lr_model.predict(X))
 
-print("Accuracy on training set:", lr_model.score(X, y))
+# Seems like a bug but whatever

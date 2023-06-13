@@ -53,7 +53,7 @@ def calcualate_entropy(X, y, left_indices, right_indices):
     ent = 0
 
     w_left = len(left_indices)/len(y)
-    w_right = len(left_indices)/len(y)
+    w_right = len(right_indices)/len(y)
     p_left = sum(y[left_indices])/len(left_indices)
     p_right = sum(y[right_indices])/len(right_indices)
     

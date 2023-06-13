@@ -21,3 +21,5 @@ def logistic_cost_test(X, y, w, b):
 w = np.array([1,1])
 b = -3
 print(logistic_cost_test(X, y, w, b))
+x, y = X.shape
+print(x,y)

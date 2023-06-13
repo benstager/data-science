@@ -8,7 +8,4 @@ def sigmoid(x):
 # Test sigmoid function
 X = np.arange(-5,6)
 y = sigmoid(X)
-print(sigmoid(X))
 
-plt.plot(X, y)
-plt.show()
