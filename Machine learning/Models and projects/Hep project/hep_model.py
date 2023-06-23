@@ -11,6 +11,7 @@ from keras.layers import Dense
 import sklearn.metrics as sk_metrics
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LogisticRegression
 import math
 
 """
@@ -54,6 +55,7 @@ y_hat2 = model.predict(X_cv)
 cv.append(np.sum(np.square(y_hat2 - y_cv)))
 
 # MODEL 3: using tensorflow NN
+"""
 X = df[col_names]
 y = df['PROT']
 X_train, X_cv, y_train, y_cv = train_test_split(X, y, test_size = .3)
@@ -72,7 +74,7 @@ model.compile(
 model.fit(X_train, y_train)
 y_hat3 = np.array(model.predict(X_cv))
 y_hat3 = y_hat3.reshape(-1,1)
-
+"""
 
 """
 The final goal for this model, apart from testing some ML frameworks is to
@@ -80,3 +82,19 @@ determine if a NN is superior to that of a simple Logistic Regression
 model for determining gender of different hepatitis patients. 
 NEED TO FIX UNKNOWN TYPE ERROR FOR LOGISTIC REGRESSION
 """
+
+# lets first reload the data and see what we can do
+X = df[col_names]
+y = np.array(df['Sex'])
+
+y[y == 'm'] = 1
+y[y == 'f'] = 0
+y=y.astype('int')
+
+X_train, X_cv, y_train, y_cv = train_test_split(X, y, test_size= .3)
+
+model = LogisticRegression()
+model.fit(X_train, y_train)
+print(model.predict(X_train))
+
+# Logistic model is done !
