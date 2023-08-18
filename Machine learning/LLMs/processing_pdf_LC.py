@@ -45,4 +45,5 @@ qa_chain = RetrievalQA.from_chain_type(
 
 # we can now run queries on our document
 result = qa_chain({'query':'When is the class scheduled?'})
-print(result['result'])
+
+# suppose we want to use .pdf, .docx, and .txt, we can iterate over them based on their ending clause
