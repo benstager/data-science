@@ -47,7 +47,7 @@ pdf_qa = ConversationalRetrievalChain.from_llm(
 )
 
 chat_history = []
-print('Welcome to the DocBot. You are now ready to start interacting with your documents')
+print('Welcome to the Ben"s DocBot. You are now ready to start interacting with your documents')
 print('---------------------------------------------------------------------------------')
 
 while True:
