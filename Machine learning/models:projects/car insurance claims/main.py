@@ -58,7 +58,7 @@ plt.tight_layout
 plt.show()
 
 """
-2. data cleaning and preprocessing
+3. data cleaning and preprocessing
 """
 # list rows that have missing values
 df.isna()
@@ -93,7 +93,7 @@ df = pd.get_dummies(df, columns=data_categories,drop_first=True)
 """
 
 """
-3. components and PCA
+4. components and PCA
 """
 # generate heat map
 num_bottom_features = 10
@@ -146,7 +146,7 @@ plt.legend()
 plt.show()
 
 """
-4. fit model to data
+5. fit model to data
 """
 # drop is_claim from design matrix
 X = df_final.drop('is_claim',axis=1)
@@ -164,7 +164,7 @@ model.fit(X, y_true)
 y_predict = model.predict(X)
 
 """
-5. generate confusion matrix and a classification report
+6. generate confusion matrix and a classification report
 """
 
 # confusion matrix
@@ -172,8 +172,5 @@ matrix = confusion_matrix(y_true, y_predict)
 
 # classification report (F1 score, accuracy etc.)
 report = classification_report(y_true, y_predict)
-
-plt.plot(df['policy_tenure'], df['age_of_policyholder'])
-plt.show()
 
 # conclusion
