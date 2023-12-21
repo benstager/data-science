@@ -1,0 +1,8 @@
+ 
+1. Find the sixth roots of unity. 
+2. (a) Calculate the square roots of i; (b) Calculate the cube roots of i; (c) Calculate the square roots of -3 + 3i.
+3. Show that if a and b are primitive nth and mth roots of unity, respectively, then ab is a kth root of unity for some integer k; explain what can be said if a and b are nonprimitive roots of unity.
+4. Use the binomial equation and compare the real and imaginary parts of each side of de Moivre's formula to obtain formulas for cos nO and sin nO. 
+5. Show that 1 +z+ ... +z"-= 0 for z = cis -lor an integer n 2. 
+6. Show that eiO = cis t is a group homomorphism of the additive group IR onto the multiplicative group T = {z: Izl = I}. 
+7. If z E C and 0 for every positive integer n, show that z is a non-negative real number.
